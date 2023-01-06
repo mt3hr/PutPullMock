@@ -1,6 +1,9 @@
 <template>
-    <input type="color" readonly :style="position_css" @click.stop="onclick_tag" :name="name" :value="value" :class="tagclass"
-        :autocomplete="autocomplete">
+    <span>
+        <input type="color" readonly :style="position_css" @click.stop="onclick_tag" :name="name" :value="value"
+            :class="tagclass" :id="tagdata.tagid" :autocomplete="autocomplete">
+        <span :style="overlay_style" @click.stop="onclick_tag"></span>
+    </span>
 </template>
 
 <script lang="ts">

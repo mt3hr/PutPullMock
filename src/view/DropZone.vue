@@ -288,8 +288,9 @@ export default class DropZone extends Vue {
                         let dropzone_y = document.getElementById("dropzone").getBoundingClientRect().top
                         html_tagdata.position_x = e.pageX - dropzone_x
                         html_tagdata.position_y = e.pageY - dropzone_y
-                        html_tagdata.position_x -= Number.parseInt(e.dataTransfer.getData("ppmk/move_tag_offset_x"))
-                        html_tagdata.position_y -= Number.parseInt(e.dataTransfer.getData("ppmk/move_tag_offset_y"))
+                        //TODO オーバーレイ挟むと機能しなくなる
+                        // html_tagdata.position_x -= Number.parseInt(e.dataTransfer.getData("ppmk/move_tag_offset_x"))
+                        // html_tagdata.position_y -= Number.parseInt(e.dataTransfer.getData("ppmk/move_tag_offset_y"))
                         return true
                     }
                     if (walk_tagdatas(tagdatas[i].child_tagdatas)) {
@@ -372,5 +373,9 @@ export default class DropZone extends Vue {
 
 body {
     overflow-y: hidden !important;
+}
+
+.dropzone_body {
+    position: relative;
 }
 </style>

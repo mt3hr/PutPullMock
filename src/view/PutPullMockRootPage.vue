@@ -222,7 +222,6 @@ export default class PutPullMockRootPage extends Vue {
         URL.revokeObjectURL(url);
     }
 
-
     save_ppmk_html_css_this_page() {
         let page_list_view: any = this.$refs['page_list_view']
         let page_index = page_list_view.selected_index
@@ -258,8 +257,6 @@ export default class PutPullMockRootPage extends Vue {
             URL.revokeObjectURL(url);
         }
     }
-
-
 
     save_ppmk_html_css_all_pages() {
         let page_list_view: any = this.$refs['page_list_view']
@@ -326,6 +323,13 @@ export default class PutPullMockRootPage extends Vue {
         if (tagdata) {
             this.onclick_tag(tagdata)
         }
+        page_list_view.clicked_page(page_list_view.pagedatas[page_list_view.selected_index])
+        this.update_struct_view(page_list_view.pagedatas[page_list_view.selected_index].html_tagdatas)
+    }
+
+    @Watch('show_border')
+    reload() {
+        let page_list_view: any = this.$refs["page_list_view"]
         page_list_view.clicked_page(page_list_view.pagedatas[page_list_view.selected_index])
         this.update_struct_view(page_list_view.pagedatas[page_list_view.selected_index].html_tagdatas)
     }

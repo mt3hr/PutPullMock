@@ -1,5 +1,8 @@
 <template>
-    <h2 :style="position_css" @click.stop="onclick_tag" :class="tagclass">{{ text }}</h2>
+    <!-- <span> -->
+        <h2 :style="position_css" :id="tagdata.tagid" @click.stop="onclick_tag" :class="tagclass">{{ text }}</h2>
+        <!-- <span :style="overlay_style" @click.stop="onclick_tag"></span> -->
+    <!-- </span> -->
 </template>
 
 <script lang="ts">

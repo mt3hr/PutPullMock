@@ -1,7 +1,10 @@
 <template>
-    <input type="search" readonly :style="position_css" @click.stop="onclick_tag" :name="name" :value="value" :size="size"
-        :maxlength="maxlength" :autocomplete="autocomplete" :pattern="pattern" :placeholder="placeholder" :class="tagclass"
-        :required="required" :list="list">
+    <span>
+        <input type="search" readonly :id="tagdata.tagid" :style="position_css" @click.stop="onclick_tag" :name="name"
+            :value="value" :size="size" :maxlength="maxlength" :autocomplete="autocomplete" :pattern="pattern"
+            :placeholder="placeholder" :class="tagclass" :required="required" :list="list">
+        <span :style="overlay_style" @click.stop="onclick_tag"></span>
+    </span>
 </template>
 
 <script lang="ts">

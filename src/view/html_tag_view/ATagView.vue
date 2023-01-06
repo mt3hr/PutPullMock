@@ -1,7 +1,10 @@
 <template>
-    <a :style="position_css" @click.stop="onclick_tag" :href="href" :name="name" :charset="charset" :hreflang="hreflang"
-        :class="tagclass" :type="type" :rel="rel" :rev="rev" :tabindex="tabindex" :accesskey="accesskey" :shape="shape"
-        :coords="coords">{{ text }}</a>
+    <div :style="wrap_style">
+        <a :style="position_css" @click.stop="onclick_tag" :href="href" :name="name" :charset="charset"
+            :id="tagdata.tagid" :hreflang="hreflang" :class="tagclass" :type="type" :rel="rel" :rev="rev"
+            :tabindex="tabindex" :accesskey="accesskey" :shape="shape" :coords="coords">{{ text }}</a>
+        <span :style="overlay_style" @click.stop="onclick_tag"></span>
+    </div>
 </template>
 
 <script lang="ts">

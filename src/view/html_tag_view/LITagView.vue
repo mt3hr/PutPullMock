@@ -1,5 +1,10 @@
 <template>
-    <li :class="tagclass" :style="position_css" @click.stop="onclick_tag" :value="value">{{ text }}</li>
+    <!-- <span> -->
+        <li :class="tagclass" :id="tagdata.tagid" :style="position_css" @click.stop="onclick_tag" :value="value">{{
+            text
+        }}</li>
+        <!-- <span :style="overlay_style" @click.stop="onclick_tag"></span> -->
+    <!-- </span> -->
 </template>
 
 <script lang="ts">

@@ -1,7 +1,10 @@
 <template>
-    <input type="week" readonly :style="position_css" @click.stop="onclick_tag" :name="name" :value="value"
-        :autocomplete="autocomplete" :list="list" :max="max" :min="min" :required="required" :class="tagclass"
-        :step="step">
+    <span>
+        <input type="week" :id="tagdata.tagid" readonly :style="position_css" @click.stop="onclick_tag" :name="name"
+            :value="value" :autocomplete="autocomplete" :list="list" :max="max" :min="min" :required="required"
+            :class="tagclass" :step="step">
+        <span :style="overlay_style" @click.stop="onclick_tag"></span>
+    </span>
 </template>
 
 <script lang="ts">

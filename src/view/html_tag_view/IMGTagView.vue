@@ -1,6 +1,9 @@
 <template>
-    <img :class="tagclass" :style="position_css" @click.stop="onclick_tag" :src="src" :alt="alt" :usemap="usemap" :ismap="ismap"
-        :width="width" :height="height" />
+    <!-- <span> -->
+        <img :class="tagclass" :id="tagdata.tagid" :style="position_css" @click.stop="onclick_tag" :src="src" :alt="alt"
+            :usemap="usemap" :ismap="ismap" :width="width" :height="height" />
+        <!-- <span :style="overlay_style" @click.stop="onclick_tag"></span> -->
+    <!-- </span> -->
 </template>
 
 <script lang="ts">

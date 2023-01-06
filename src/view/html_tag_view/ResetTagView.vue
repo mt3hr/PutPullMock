@@ -1,5 +1,9 @@
 <template>
-    <input type="reset" readonly :class="tagclass" :style="position_css" @click.stop="onclick_tag" :value="value">
+    <span>
+        <input type="reset" readonly :id="tagdata.tagid" :class="tagclass" :style="position_css"
+            @click.stop="onclick_tag" :value="value">
+        <span :style="overlay_style" @click.stop="onclick_tag"></span>
+    </span>
 </template>
 
 <script lang="ts">

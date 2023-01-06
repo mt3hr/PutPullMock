@@ -1,7 +1,10 @@
 <template>
-    <input type="submit" readonly :style="position_css" @click.stop="onclick_tag" :name="name" :value="value" :formaction="formaction"
-        :class="tagclass" :formenctype="formenctype" :formmethod="formmethod" :formnovalidate="formnovalidate"
-        :formtarget="formtarget">
+    <span>
+        <input type="submit" readonly :id="tagdata.tagid" :style="position_css" @click.stop="onclick_tag" :name="name"
+            :value="value" :formaction="formaction" :class="tagclass" :formenctype="formenctype"
+            :formmethod="formmethod" :formnovalidate="formnovalidate" :formtarget="formtarget">
+        <span :style="overlay_style" @click.stop="onclick_tag"></span>
+    </span>
 </template>
 
 <script lang="ts">

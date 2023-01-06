@@ -1,7 +1,11 @@
 <template>
-    <input type="image" readonly :style="position_css" @click.stop="onclick_tag" :name="name" :value="value" :src="src" :alt="alt"
-        :class="tagclass" :height="height" :width="width" :formaciton="formaciton" :formenctype="formenctype"
-        :formmethod="formmethod" :formnovalidate="formnovalidate" :formtarget="formtarget">
+    <span>
+        <input type="image" readonly :id="tagdata.tagid" :style="position_css" @click.stop="onclick_tag" :name="name"
+            :value="value" :src="src" :alt="alt" :class="tagclass" :height="height" :width="width"
+            :formaciton="formaciton" :formenctype="formenctype" :formmethod="formmethod"
+            :formnovalidate="formnovalidate" :formtarget="formtarget">
+        <span :style="overlay_style" @click.stop="onclick_tag"></span>
+    </span>
 </template>
 
 <script lang="ts">

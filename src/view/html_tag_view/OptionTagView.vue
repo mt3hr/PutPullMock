@@ -1,6 +1,9 @@
 <template>
-    <option :class="tagclass" :style="position_css" @click.stop="onclick_tag" :disabled="disabled" :label="label"
-        :selected="selected" :value="value" />
+    <!-- <span> -->
+        <option :class="tagclass" :id="tagdata.tagid" :style="position_css" @click.stop="onclick_tag"
+            :disabled="disabled" :label="label" :selected="selected" :value="value" />
+        <!-- <span :style="overlay_style" @click.stop="onclick_tag"></span> -->
+    <!-- </span> -->
 </template>
 
 <script lang="ts">

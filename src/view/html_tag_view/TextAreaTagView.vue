@@ -1,7 +1,10 @@
 <template>
-    <textarea :style="position_css" readonly @click.stop="onclick_tag" :autofocus="autofocus" :cols="cols" :disabled="disabled"
-        :form="form" :maxlength="maxlength" :name="name" :placeholder="placeholder" :class="tagclass"
-        :required="required" :rows="rows" :wrap="wrap"></textarea>
+    <span>
+        <textarea :style="position_css" :id="tagdata.tagid" readonly @click.stop="onclick_tag" :autofocus="autofocus"
+            :cols="cols" :disabled="disabled" :form="form" :maxlength="maxlength" :name="name"
+            :placeholder="placeholder" :class="tagclass" :required="required" :rows="rows" :wrap="wrap"></textarea>
+        <span :style="overlay_style" @click.stop="onclick_tag"></span>
+    </span>
 </template>
 
 <script lang="ts">

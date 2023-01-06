@@ -1,6 +1,10 @@
 <template>
-    <input type="range" readonly :style="position_css" @click.stop="onclick_tag" :name="name" :value="value" :class="tagclass"
-        :autocomplete="autocomplete" :list="list" :max="max" :min="min" :step="step">
+    <span>
+        <input type="range" readonly :id="tagdata.tagid" :style="position_css" @click.stop="onclick_tag" :name="name"
+            :value="value" :class="tagclass" :autocomplete="autocomplete" :list="list" :max="max" :min="min"
+            :step="step">
+        <span :style="overlay_style" @click.stop="onclick_tag"></span>
+    </span>
 </template>
 
 <script lang="ts">

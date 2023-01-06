@@ -1,7 +1,10 @@
 <template>
-    <input type="password" readonly :style="position_css" @click.stop="onclick_tag" :name="name" :value="value" :size="size"
-        :maxlength="maxlength" :autocomplete="autocomplete" :pattern="pattern" :placeholder="placeholder"
-        :class="tagclass" :required="required">
+    <span>
+        <input type="password" readonly :style="position_css" @click.stop="onclick_tag" :name="name" :value="value"
+            :id="tagdata.tagid" :size="size" :maxlength="maxlength" :autocomplete="autocomplete" :pattern="pattern"
+            :placeholder="placeholder" :class="tagclass" :required="required">
+        <span :style="overlay_style" @click.stop="onclick_tag"></span>
+    </span>
 </template>
 
 <script lang="ts">

@@ -1,7 +1,10 @@
 <template>
-    <input type="month" readonly :style="position_css" @click.stop="onclick_tag" :name="name" :value="value" :class="tagclass"
-        :autocomplete="autocomplete" :list="list" :max="max" :min="min" :required="required"
-        :step="step">
+    <span>
+        <input type="month" readonly :id="tagdata.tagid" :style="position_css" @click.stop="onclick_tag" :name="name"
+            :value="value" :class="tagclass" :autocomplete="autocomplete" :list="list" :max="max" :min="min"
+            :required="required" :step="step">
+        <span :style="overlay_style" @click.stop="onclick_tag"></span>
+    </span>
 </template>
 
 <script lang="ts">

@@ -1,8 +1,10 @@
-
 <template>
-    <input type="email" readonly :style="position_css" @click.stop="onclick_tag" :name="name" :value="value" :size="size"
-        :class="tagclass" :maxlength="maxlength" :autocomplete="autocomplete" :multiple="multiple" :pattern="pattern"
-        :placeholder="placeholder" :required="required">
+    <span>
+        <input type="email" readonly :style="position_css" @click.stop="onclick_tag" :name="name" :value="value"
+            :id="tagdata.tagid" :size="size" :class="tagclass" :maxlength="maxlength" :autocomplete="autocomplete"
+            :multiple="multiple" :pattern="pattern" :placeholder="placeholder" :required="required">
+        <span :style="overlay_style" @click.stop="onclick_tag"></span>
+    </span>
 </template>
 
 <script lang="ts">

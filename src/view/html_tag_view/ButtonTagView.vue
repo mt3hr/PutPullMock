@@ -1,5 +1,9 @@
 <template>
-    <input type="button" readonly :style="position_css" @click.stop="onclick_tag" :class="tagclass" :name="name" :value="value">
+    <span>
+        <input type="button" :id="tagdata.tagid" readonly :style="position_css" @click.stop="onclick_tag"
+            :class="tagclass" :name="name" :value="value">
+        <span :style="overlay_style" @click.stop="onclick_tag"></span>
+    </span>
 </template>
 
 <script lang="ts">

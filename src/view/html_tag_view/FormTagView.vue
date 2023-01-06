@@ -1,12 +1,15 @@
 <template>
-    <form :style="position_css" @click.stop="onclick_tag" :class="tagclass" @drop="on_drop"
-        :acceptcharset="acceptcharset" :action="action" :autocomplete="autocomplete" :enctype="enctype" :method="method"
-        :name="name" :novalidate="novalidate" :target="target" @dragover.prevent="on_dragover">
-        <HTMLTagView v-for="(child_tagdata, index) in tagdata_typed.child_tagdatas" :key="index"
-            @updated_tagdatas_root="updated_tagdatas_root" :show_border="show_border" :tagdatas_root="tagdatas_root"
-            :tagdata="child_tagdata" @updated_tagdata="updated_child_tagdata"
-            @onclick_tag="onclick_child_tag(child_tagdata)" @delete_tagdata="delete_child_tagdata" />
-    </form>
+    <!-- <span> -->
+        <form :style="position_css" @click.stop="onclick_tag" :class="tagclass" @drop="on_drop" :id="tagdata.tagid"
+            :acceptcharset="acceptcharset" :action="action" :autocomplete="autocomplete" :enctype="enctype"
+            :method="method" :name="name" :novalidate="novalidate" :target="target" @dragover.prevent="on_dragover">
+            <HTMLTagView v-for="(child_tagdata, index) in tagdata_typed.child_tagdatas" :key="index"
+                @updated_tagdatas_root="updated_tagdatas_root" :show_border="show_border" :tagdatas_root="tagdatas_root"
+                :tagdata="child_tagdata" @updated_tagdata="updated_child_tagdata"
+                @onclick_tag="onclick_child_tag(child_tagdata)" @delete_tagdata="delete_child_tagdata" />
+        </form>
+        <!-- <span :style="overlay_style" @click.stop="onclick_tag"></span> -->
+    <!-- </span> -->
 </template>
 <script lang="ts">
 import HTMLTagDataBase, { PositionStyle } from '@/html_tagdata/HTMLTagDataBase';

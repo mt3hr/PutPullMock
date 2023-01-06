@@ -1,6 +1,11 @@
 <template>
-    <label :class="tagclass" :style="position_css" @click.stop="onclick_tag" :form="form" :for="this.for" :text="text">{{ text
-        }}</label>
+    <!-- <span> -->
+        <label :class="tagclass" :id="tagdata.tagid" :style="position_css" @click.stop="onclick_tag" :form="form"
+            :for="this.for" :text="text">{{
+                text
+            }}</label>
+        <!-- <span :style="overlay_style" @click.stop="onclick_tag"></span> -->
+    <!-- </span> -->
 </template>
 
 <script lang="ts">
