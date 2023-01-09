@@ -327,6 +327,8 @@ export default class PutPullMockRootPage extends Vue {
             settings = JSON.parse(document.cookie, deserialize)
 
             let sample_project: Array<PageData> = JSON.parse(JSON.stringify(sample_project_json), deserialize)
+            let pagedatas: Array<PageData> = sample_project
+            /*
             let about_ppmk_pagedata: PageData
             for (let i = 0; i < sample_project.length; i++) {
                 if (sample_project[i].pageid == "d4c84155-99d0-4a95-bfea-66d3e2b173ca") {
@@ -336,14 +338,15 @@ export default class PutPullMockRootPage extends Vue {
             }
             let pagedatas: Array<PageData> = new Array<PageData>()
             pagedatas.push(about_ppmk_pagedata)
+            */
 
             this.$nextTick(() => {
                 let page_list_view: any = this.$refs['page_list_view']
 
                 page_list_view.pagedatas = pagedatas
-                this.updated_htmltagdatas(about_ppmk_pagedata.html_tagdatas, null)
+                this.updated_htmltagdatas(pagedatas[0].html_tagdatas, null)
                 this.$nextTick(() => {
-                    page_list_view.clicked_page(about_ppmk_pagedata)
+                    page_list_view.clicked_page(pagedatas[0])
                 })
             })
         }
